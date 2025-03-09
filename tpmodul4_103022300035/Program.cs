@@ -18,6 +18,21 @@ class Program
         {
             Console.WriteLine($"{kel}: {KodePos.GetKodePos(kel)}");
         }
+
+        Console.WriteLine("Door Machine");
+        DoorMachine pintu = new DoorMachine();
+
+        while (true)
+        {
+            Console.Write("\nMasukkan perintah (BUKA/KUNCI/KELUAR): ");
+            string command = Console.ReadLine().ToUpper();
+            if (command == "KELUAR")
+            {
+                Console.WriteLine("Program selesai");
+                    break;
+            }
+            pintu.processCommand(command);
+        }
     }
 }
 
